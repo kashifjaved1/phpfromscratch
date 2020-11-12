@@ -23,17 +23,29 @@
                     // }
 
                     //foreach($person as $key => $feature):
-                    echo "<u>Home Work</u><br>";
-                    foreach($task as $key => $val): 
+                    // echo "<u>Home Work</u><br>";
+                    // foreach($task as $key => $val): 
                 ?>
-                    <li><strong><?= ucwords($key) . ': '; ?></strong><?= $val; ?></li> 
-                <?php   
-                    endforeach; 
-                ?>
-
+                    <!-- <li><strong><?php //= ucwords($key) . ': '; ?></strong><?php //= $val; ?></li> -->
                 <?php
-
+                    //endforeach; 
                 ?>
+
+                <!-- <h1>Conditions in php</h1> -->
+                <!-- <li><strong>Task Title: </strong><?php //= $task['title']; ?></li>
+                <li><strong>Due Date: </strong><?php //= $task['due']; ?></li>
+                <li><strong>Person Responible: </strong><?php //= $task['assignee']; ?></li>
+                <li><strong>Task Status: </strong> -->
+                <?php 
+                    // if($task['status'] == true){
+                    //     //echo "Completed";
+                    //     echo "&#9989";
+                    // }
+                    // else{
+                    //     echo "Incomplete";
+                    // }
+                ?></li>
+
             </h1>
         </header>
 </body>

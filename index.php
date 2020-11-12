@@ -37,7 +37,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Practice</title>
+    <title>Seperating Logic from Presentation</title>
 
     <style>
         header{
@@ -49,7 +49,7 @@
 
 </head>
 <body> -->
-    
+    <!-- Displaying variable value -->
     <!-- <header>
         <h1>
             <?php
@@ -60,20 +60,26 @@
     </header> -->
 
     <!-- <header>
-        <h1>
+        <h1> -->
+            <!-- Fetching and Displaying Data from URL using $_GET Method -->
             <?php //echo $greeting = 'Hello, '. $_GET['name']; ?><br>
             <?php // = $greeting = 'Hello, '. $_GET['name']; ?><br>
+            <!-- we can't believe on data from user so justifying it using htmlspecialchars() function -->
             <?php //echo $greeting = 'Hello, '. htmlspecialchars($_GET['name']); ?><br>
             <?php //echo $greeting = 'Hello, '. htmlspecialchars('<a href="https://www.google.com">Google</a>'); ?>
-        </h1>
+        <!-- </h1>
     </header>
 
 </body>
 </html> -->
 
 <?php
+
+    //------------------------------------------ Simple variable
     
     //$greeting = 'Hello, World';
+
+    //------------------------------------------ Simple Array
 
     // $names = [
     //     'Kashif Javed',
@@ -81,30 +87,54 @@
     //     'Faisal Malik'
     // ];
 
+    //------------------------------------------ Assosiative Array
+    
     // $person = [
     //     'name' => 'Kashif Javed',
     //     'age' => 21,
     //     'job' => 'Junior Full Stack Programmer',
     // ];
 
+    //------------------------------------------ Dumping Array using var_dump()
+
     // echo "var_dump() = ";
     // var_dump($person);
     // echo "<br>";
 
+    //------------------------------------------ Deleting / Releasing / Unsetting Variable Value
+
     //unset($person['age']);
+
+    //------------------------------------------ Printing Array using print_r()
 
     // echo "print_r() = ";
     // print_r($person);
 
+    //------------------------------------------ Make the Execution Dead after die()
+
     // die();
 
-    $task = [
-        'title' => 'Maths Assignment',
-        'due' => 'Jan 10, 2021',
-        'assignee' => 'John Albert',
-        // 'status' => 'pending'
-        'status' => true
-    ];
+    //------------------------------------------ Home Work
+
+    // $task = [
+    //     'title' => 'Maths Assignment',
+    //     'due' => 'Jan 10, 2021',
+    //     'assignee' => 'John Albert',
+    //     // 'status' => 'pending'
+    //     'status' => true
+    // ];
+
+    $animal = ['Cat', 'Dog'];
+
+    function dd($animal){
+        echo '<pre>';
+        die(var_dump($animal));
+        echo '</pre>';
+    }
+
+    dd($animal);
+
+    dd('Hello World');
     
     require 'index.view.php';
 
