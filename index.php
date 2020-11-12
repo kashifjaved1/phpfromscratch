@@ -221,7 +221,9 @@
     
     include 'function.php';
 
-    $pdo = connectToDB();
+    include 'database/connection.php';
+
+    $pdo = Connection::make();
 
     fetchAllTasks($pdo);
 
