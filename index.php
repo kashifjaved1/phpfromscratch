@@ -62,10 +62,13 @@
     <!-- <header>
         <h1> -->
             <!-- Fetching and Displaying Data from URL using $_GET Method -->
-            <?php //echo $greeting = 'Hello, '. $_GET['name']; ?><br>
-            <?php // = $greeting = 'Hello, '. $_GET['name']; ?><br>
+            <?php //echo $greeting = 'Hello, '. $_GET['name']; ?>
+            <!-- <br> -->
+            <?php // = $greeting = 'Hello, '. $_GET['name']; ?>
+            <!-- <br> -->
             <!-- we can't believe on data from user so justifying it using htmlspecialchars() function -->
-            <?php //echo $greeting = 'Hello, '. htmlspecialchars($_GET['name']); ?><br>
+            <?php //echo $greeting = 'Hello, '. htmlspecialchars($_GET['name']); ?>
+            <!-- <br> -->
             <?php //echo $greeting = 'Hello, '. htmlspecialchars('<a href="https://www.google.com">Google</a>'); ?>
         <!-- </h1>
     </header>
@@ -114,7 +117,7 @@
 
     // die();
 
-    //------------------------------------------ Home Work
+    //------------------------------------------ Home Work - Exercise # 1
 
     // $task = [
     //     'title' => 'Maths Assignment',
@@ -124,18 +127,102 @@
     //     'status' => true
     // ];
 
-    $animal = ['Cat', 'Dog'];
+    // $animal = ['Cat', 'Dog'];
 
-    function dd($animal){
-        echo '<pre>';
-        die(var_dump($animal));
-        echo '</pre>';
+    // function dd($animal){
+    //     echo '<pre>';
+    //     die(var_dump($animal));
+    //     echo '</pre>';
+    // }
+
+    //require 'function.php';
+
+    // dd($animal);
+
+    //dd('Hello World');
+
+    //------------------------------------------ Home Work - Exercise # 2
+
+    // $list = [19, 20, 21, 22];
+
+    // function check($list){
+    //     if(gettype($list) == "array"){
+    //         foreach($list as $index){
+    //             if($index >= 21){
+    //                 echo "You can Join Adult Club.<br>";
+    //             }
+    //             else{
+    //                 echo "You can't Join Adult Club.<br>";
+    //             }
+    //         }
+    //     }
+    //     else{
+    //         if($list >= 21){
+    //             echo "You can Join Adult Club.<br>";
+    //         }
+    //         else{
+    //             echo "You can't Join Adult Club.<br>";
+    //         }
+    //     }
+    // }
+    
+    // check($list);
+    // check(15);
+
+    //------------------------------------------ Classes
+
+    //require 'function.php';
+
+    class Task{
+
+        public $description;
+
+        //protected $description;
+
+        public $completed = false;
+        
+        //protected $completed = false;
+
+        public function __construct($description){
+            // Automatically triggered on Instantiation
+            $this->description = $description;
+        }
+
+        public function isComplete(){
+            return $this->completed;
+        }
+
+        public function Completed(){
+            $this->completed = true;
+        }
     }
 
-    dd($animal);
+    //$task = new Task('Go to School');
 
-    dd('Hello World');
-    
+    //dd($task);
+
+    // var_dump($task->isComplete());
+    // var_dump($task->Completed());
+    // var_dump($task->isComplete());
+
+    // $tasks = [
+    //     new Task('Go to School'),
+    //     new Task('Finish School Homework'),
+    //     new Task('Clean my room'),
+    // ];
+
+    //dd($tasks);
+
+    //$tasks[1]->Completed();
+
     require 'index.view.php';
+
+    //------------------------------------------ Into to PDO
+    
+    include 'function.php';
+
+    $pdo = connectToDB();
+
+    fetchAllTasks($pdo);
 
 ?>

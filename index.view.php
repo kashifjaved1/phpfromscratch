@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
+    <!-- <style>
         header{
             background-color: #e3e3e3;
             padding: 3em;
             text-align: center;
         }
-    </style>
+    </style> -->
 
 </head>
 <body>
-        <header>
-            <h1>
+        <!-- <header>
+            <h1> -->
                 <?php //= $greeting;
                     // foreach($names as $name){
                     //     echo "<li>ucwords($name)</li>";
@@ -35,7 +35,7 @@
                 <!-- <li><strong>Task Title: </strong><?php //= $task['title']; ?></li>
                 <li><strong>Due Date: </strong><?php //= $task['due']; ?></li>
                 <li><strong>Person Responible: </strong><?php //= $task['assignee']; ?></li>
-                <li><strong>Task Status: </strong> -->
+                <li><strong>Task Status: </strong> 
                 <?php 
                     // if($task['status'] == true){
                     //     //echo "Completed";
@@ -44,9 +44,31 @@
                     // else{
                     //     echo "Incomplete";
                     // }
-                ?></li>
+                ?></li> -->
 
-            </h1>
-        </header>
+
+
+            <!-- </h1>
+        </header> -->
+
+    <!-- Fetching and Displaying Class Objects and their values -->
+
+    <!-- <ul>
+        <?php //foreach($tasks as $task): ?>
+            <li>
+                <?php 
+                // if($task->completed){
+                //     echo "<strike>";
+                //     echo $task->description;
+                //     echo "</strike>";
+                // }
+                // else{
+                //     echo $task->description;
+                // }
+                ?>
+            </li>
+        <?php //endforeach; ?>
+    </ul> -->
+
 </body>
 </html>
