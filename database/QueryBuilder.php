@@ -8,11 +8,11 @@
             $this->pdo = $pdo;
         }
 
-        public function selectAll($table, $mapping_class){
+        public function selectAll($table){
 
             $statement = $this->pdo->prepare("select * from $table");
             $statement->execute();
-            return $statement->fetchAll(PDO::FETCH_CLASS, $mapping_class);
+            return $statement->fetchAll(PDO::FETCH_CLASS);
 
         }
 

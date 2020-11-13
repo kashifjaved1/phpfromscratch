@@ -1,15 +1,9 @@
 <?php 
     
-    include 'database/Connection.php';
-    include 'database/QueryBuilder.php';
-    include 'Task.php';
-    
-    $pdo = Connection::make();
+    $query = require 'bootstrap.php';  
 
-    $query = new QueryBuilder($pdo);
+    $tasks = $query->selectAll('todo');
 
-    $tasks = $query->selectAll('todo', 'Task');
-    
     require 'index.view.php';
 
 ?>
