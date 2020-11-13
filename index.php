@@ -1,9 +1,13 @@
 <?php 
     
-    $query = require 'bootstrap.php';  
+    $query = require 'core/bootstrap.php';
 
-    $tasks = $query->selectAll('todo');
+    $router = new Router;
 
-    require 'index.view.php';
+    require 'routes.php';
 
-?>
+    die(var_dump($_SERVER));
+
+    $uri = trim($_SERVER['REQUEST_URI'], '/');
+
+    return $router->direct('about');
