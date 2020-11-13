@@ -70,5 +70,24 @@
         <?php //endforeach; ?>
     </ul> -->
 
+    <!-- Fetching Tasks using Tasks Class -->
+
+    <ul>
+    <?php foreach($tasks as $task): ?>
+            <li>
+                <?php 
+                if($task->completed){
+                    echo "<strike>";
+                    echo $task->description;
+                    echo "</strike>";
+                }
+                else{
+                    echo $task->description;
+                }
+                ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
 </body>
 </html>

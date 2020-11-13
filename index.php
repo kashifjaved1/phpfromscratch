@@ -173,29 +173,29 @@
 
     //require 'function.php';
 
-    class Task{
+    // class Task{
 
-        public $description;
+    //     public $description;
 
-        //protected $description;
+    //     //protected $description;
 
-        public $completed = false;
+    //     public $completed = false;
         
-        //protected $completed = false;
+    //     //protected $completed = false;
 
-        public function __construct($description){
-            // Automatically triggered on Instantiation
-            $this->description = $description;
-        }
+    //     public function __construct($description){
+    //         // Automatically triggered on Instantiation
+    //         $this->description = $description;
+    //     }
 
-        public function isComplete(){
-            return $this->completed;
-        }
+    //     public function isComplete(){
+    //         return $this->completed;
+    //     }
 
-        public function Completed(){
-            $this->completed = true;
-        }
-    }
+    //     public function Completed(){
+    //         $this->completed = true;
+    //     }
+    // }
 
     //$task = new Task('Go to School');
 
@@ -215,16 +215,16 @@
 
     //$tasks[1]->Completed();
 
-    require 'index.view.php';
+    //require 'index.view.php';
 
     //------------------------------------------ Into to PDO
     
-    include 'function.php';
-
-    include 'database/connection.php';
+    include 'database/Connection.php';
+    include 'database/QueryBuilder.php';
+    include 'Task.php';
 
     $pdo = Connection::make();
 
-    fetchAllTasks($pdo);
+    require 'index.view.php';
 
 ?>
