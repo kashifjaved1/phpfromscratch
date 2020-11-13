@@ -8,8 +8,8 @@
 
     $query = new QueryBuilder($pdo);
 
-    $tasks = $query->selectAll('todo');
-
+    $tasks = $query->selectAll('todo', 'Task');
+    
     require 'index.view.php';
 
 ?>
