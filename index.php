@@ -10,4 +10,4 @@
 
     $uri = trim($_SERVER['REQUEST_URI'], '/');
 
-    return $router->direct('about');
+    return $router->direct($uri);
