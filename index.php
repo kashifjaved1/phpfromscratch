@@ -1,13 +1,14 @@
 <?php 
     
-    $query = require 'core/bootstrap.php';
+    require 'core/bootstrap.php';
 
-    $router = new Router;
+    // Method # 1
 
-    require 'routes.php';
+    // $router = Router::load('routes.php');
 
-    die(var_dump($_SERVER));
+    // $router->direct($uri);
 
-    $uri = trim($_SERVER['REQUEST_URI'], '/');
+    // Method # 2
 
-    return $router->direct($uri);
+    require Route::load('routes.php') 
+            -> direct(Request::uri());
