@@ -1,8 +1,8 @@
 <?php
 
     $router->define([
-        '' => 'controllers/index.php',
-        'about' => 'controllers/about.php',
-        'contact' => 'controllers/contact.php',
-        'about/culture' => 'controllers/about-culture.php'
+        'phpfromscratch' => 'controllers/index.php',
+        'phpfromscratch/about' => 'controllers/about.php',
+        'phpfromscratch/contact' => 'controllers/contact.php',
+        'phpfromscratch/about/culture' => 'controllers/about-culture.php'
     ]);
