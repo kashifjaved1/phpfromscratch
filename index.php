@@ -12,5 +12,5 @@
 
     // Method # 2
 
-    require Router::load('routes.php') 
+    Router::load('routes.php') 
             -> direct(Request::uri(), Request::method());

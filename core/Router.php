@@ -45,12 +45,36 @@ class Router{
 
         if(array_key_exists($uri, $this->routes[$requestType])){
             
-            return $this->routes[$requestType][$uri];
+            return $this->callAction(
+
+                // ... convert array into function parameters
+                ...explode('@', $this->routes[$requestType][$uri])
+
+            );
             
         }
         else{
 
             throw new Exception('Oops, URL not Exist.');
+
+        }
+
+    }
+
+    protected function callAction($controller, $action){
+
+        if(method_exists($controller, $action)){
+
+            return (new $controller) -> $action();
+            
+        }
+        else{
+            
+            throw new Exception(
+
+                "$controller does not respond to $action action."
+
+            ); 
 
         }
 
