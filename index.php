@@ -1,16 +1,15 @@
 <?php 
-    
+
     require 'vendor/autoload.php';
 
     require 'core/bootstrap.php';
 
-    // Method # 1
+    // use App\Core\Router;
+    // use App\Core\Request;
 
-    // $router = Router::load('routes.php');
+    //         OR
 
-    // $router->direct($uri);
+    use App\Core\{Router, Request};
 
-    // Method # 2
-
-    Router::load('routes.php') 
+    Router::load('app/routes.php') 
             -> direct(Request::uri(), Request::method());

@@ -1,83 +1,89 @@
 <?php
 
-class Router{
+    namespace App\Core;
 
-    protected $routes = [
+    class Router{
 
-            'GET' => [],
-            'POST' => []
+        protected $routes = [
 
-    ];
+                'GET' => [],
+                'POST' => []
 
-    public static function load($file){
+        ];
 
-        // Method # 1
+        public static function load($file){
 
-        //$router = new Router;
+            // Method # 1
 
-        // Method # 2
+            //$router = new Router;
 
-        //$router = new self;
+            // Method # 2
 
-        // Method # 3
+            //$router = new self;
 
-        $router = new static;
+            // Method # 3
 
-        require $file;
+            $router = new static;
 
-        return $router;
+            require $file;
 
-    }
-
-    public function get($uri, $controller){
-
-        $this->routes['GET'][$uri] = $controller;
-
-    }
-
-    public function post($uri, $controller){
-
-        $this->routes['POST'][$uri] = $controller;
-
-    }
-
-    public function direct($uri, $requestType){
-
-        if(array_key_exists($uri, $this->routes[$requestType])){
-            
-            return $this->callAction(
-
-                // ... convert array into function parameters
-                ...explode('@', $this->routes[$requestType][$uri])
-
-            );
-            
-        }
-        else{
-
-            throw new Exception('Oops, URL not Exist.');
+            return $router;
 
         }
 
-    }
+        public function get($uri, $controller){
 
-    protected function callAction($controller, $action){
-
-        if(method_exists($controller, $action)){
-
-            return (new $controller) -> $action();
-            
-        }
-        else{
-            
-            throw new Exception(
-
-                "$controller does not respond to $action action."
-
-            ); 
+            $this->routes['GET'][$uri] = $controller;
 
         }
 
-    }
+        public function post($uri, $controller){
 
-}
+            $this->routes['POST'][$uri] = $controller;
+
+        }
+
+        public function direct($uri, $requestType){
+
+            if(array_key_exists($uri, $this->routes[$requestType])){
+                
+                return $this->callAction(
+
+                    // ... convert array into function parameters
+                    ...explode('@', $this->routes[$requestType][$uri])
+
+                );
+                
+            }
+            else{
+
+                throw new Exception('Oops, URL not Exist.');
+
+            }
+
+        }
+
+        protected function callAction($controller, $action){
+
+            $controller = "App\\Controllers\\$controller";
+
+            $controller = new $controller;
+
+            if(method_exists($controller, $action)){
+
+                return (new $controller) -> $action();
+                
+            }
+            else{
+                
+                throw new Exception(
+
+                    "$controller does not respond to $action action."
+
+                ); 
+
+            }
+
+        }
+
+    }
